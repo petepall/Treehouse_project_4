@@ -12,6 +12,7 @@ coverage = "*"
 
 [packages]
 peewee = "==3.9.4"
+pyfiglet = "*"
 
 [requires]
 python_version = "3.7"

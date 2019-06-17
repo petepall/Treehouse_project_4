@@ -26,3 +26,6 @@
     - The models folder contains the ORM mappings
     - The helper_modules contains small helper modules that can be reused across projects
 
+### **_ATTENTION_**
+    The database is not included in the repository.
+    The database will generate the first time you run the file.
