@@ -3,10 +3,10 @@
 Function:
     Import and convert initial data and allow for adding new product data
 """
-from helper_modules.clear_screen import clear_screen
 from peewee import InternalError
-from models.product import Product, dbhandle
 
+from helper_modules.clear_screen import clear_screen
+from models.product import Product, dbhandle
 
 if __name__ == "__main__":
     # handle the database connection and when required create the table
