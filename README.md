@@ -19,10 +19,10 @@
 
 
 ### *_Structures_*
-    - The input data exists in the `data_import` folder
-    - The backup data will be stored in the `data_back-up` folder
-    - The database is stored under folder `database`
-    - The `documentation` folder contains the rubric data and the requirements info
-    - The `models` folder contains the ORM mappings
-    - The `helper_modules` contains small helper modules that can be reused across projects
+    - The input data exists in the ```data_import``` folder
+    - The backup data will be stored in the ```data_back-up``` folder
+    - The database is stored under folder ```database```
+    - The ```documentation``` folder contains the rubric data and the requirements info
+    - The ```models``` folder contains the ORM mappings
+    - The ```helper_modules``` contains small helper modules that can be reused across projects
 
