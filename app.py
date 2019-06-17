@@ -12,7 +12,7 @@ if __name__ == "__main__":
     # handle the database connection and when required create the table
     try:
         dbhandle.connect()
-        Product.create_table(safe=True)
+        dbhandle.create_tables([Product], safe=True)
     except InternalError as err:
         print(str(err))
 
