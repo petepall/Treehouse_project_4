@@ -6,7 +6,8 @@ Function:
 from peewee import InternalError
 
 from helper_modules.clear_screen import clear_screen
-from models.product import Product, dbhandle
+from models.basemodel import dbhandle
+from models.product import Product
 
 if __name__ == "__main__":
     # handle the database connection and when required create the table
