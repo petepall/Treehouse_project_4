@@ -1,6 +1,6 @@
 import csv
 from pathlib import Path
-from datetime import datetime
+from datetime import date
 
 
 def read_csv_data():
@@ -30,10 +30,9 @@ def clean_data():
         row['product_quantity'] = int(row['product_quantity'])
         # create the date time field.
         last_updated = row['date_updated'].split('/')
-        row['date_updated'] = datetime(int(last_updated[2]),
-                                       int(last_updated[0]),
-                                       int(last_updated[1]),
-                                       0, 0, 0, 0)
+        row['date_updated'] = date(int(last_updated[2]),
+                                   int(last_updated[0]),
+                                   int(last_updated[1]))
 
         inventory.append({header[0]: row['product_name'],
                           header[1]: row['product_price'],
@@ -41,6 +40,3 @@ def clean_data():
                           header[3]: row['date_updated']})
 
     return inventory
-
-
-clean_data()
