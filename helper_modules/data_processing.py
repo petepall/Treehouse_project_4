@@ -23,7 +23,6 @@ def clean_data():
     header, product_data = read_csv_data()
 
     for row in product_data:
-        print(row)
         # remove the $ from the price and covert to cents
         row['product_price'] = int(
             float(row['product_price'].lstrip('$')) * 100)
@@ -40,3 +39,4 @@ def clean_data():
                           header[3]: row['date_updated']})
 
     return inventory
+
