@@ -7,7 +7,7 @@ __pycache__/
 *.so
 
 # Excluded project files
-database/*.db
+db/*.db
 
 # Distribution / packaging
 .Python
