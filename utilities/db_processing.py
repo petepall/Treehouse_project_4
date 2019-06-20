@@ -3,7 +3,7 @@ from peewee import IntegrityError
 from models.product import Product
 
 
-def write_rows_to_db(csv_data) -> None:
+def write_csv_to_db(csv_data) -> None:
     """Read the data from the csv file and write it to the db
 
     Returns
@@ -11,11 +11,13 @@ def write_rows_to_db(csv_data) -> None:
     None
     """
     for row in csv_data:
-        create_product(row)
+        add_product_to_db(row)
 
 
-def create_product(product: dict) -> None:
-    """Takes a dictionary and inserts the product into the db
+def add_product_to_db(product: dict) -> None:
+    """Takes a dictionary and inserts the product into the db.
+    If a product with duplicate name is found, existing data will be updated if
+    the 'date_updated' is higher than the existing record.
 
     Parameters
     ----------
@@ -38,3 +40,13 @@ def create_product(product: dict) -> None:
             result.product_price = product['product_price']
             result.date_updated = product['date_updated']
             result.save()
+
+
+def view_product():
+    # TODO: complete the view_product function
+    pass
+
+
+def backup_data():
+    # TODO: complete the backup_data function
+    pass
