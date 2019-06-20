@@ -28,4 +28,3 @@ class StoreMenu:
     @classmethod
     def menu(cls):
         pass
-              
