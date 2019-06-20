@@ -74,3 +74,37 @@ def to_currency(cents: int) -> str:
         Formated dollar amount
     """
     return f"${cents / 100:.2f}"
+
+
+def create_folder(location: str):
+    """Receive a folder location and name and create the folder
+
+    Parameters
+    ----------
+    location : str
+        folder location and name
+    """
+    print(location)
+    try:
+        os.mkdir(location)
+    except FileExistsError:
+        pass
+
+
+def check_folder_exists(location: str) -> bool:
+    """Receive a folder path and name and validate if it exists
+
+    Parameters
+    ----------
+    location : str
+        string representing the folder path and name
+
+    Returns
+    -------
+    bool
+        True if folder is found else False is returned
+    """
+    if os.path.isdir(location):
+        return True
+    else:
+        return False
