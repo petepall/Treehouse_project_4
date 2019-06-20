@@ -10,6 +10,6 @@ CSV_FILE_EXPORT = "backup.csv"
 MENU = OrderedDict([
     ('a', 'add_entry'),
     ('v', 'view_entries'),
-    ('s', 'search_entries'),
+    ('b', 'backup data'),
     ('q', 'QUIT the App')
 ])
