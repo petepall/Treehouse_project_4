@@ -45,5 +45,5 @@ if __name__ == "__main__":
 
     # TODO: clean-up the following test code
     clear_screen()
-    StoreMenu._header()
-    StoreMenu._menu_options(MENU)
+    StoreMenu._print_header()
+    StoreMenu._show_menu_options(MENU)
