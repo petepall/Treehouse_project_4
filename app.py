@@ -6,7 +6,7 @@ from models.base_model import dbhandle
 from models.product import Product
 from utilities.constants import CSV_FILE_IMPORT, DB_FILE, DB_FOLDER, MENU
 from utilities.csv_processing import clean_csv_data, read_from_csv
-from utilities.db_processing import write_rows_to_db
+from utilities.db_processing import write_csv_to_db
 from utilities.helper_functions import (check_folder_exists, clear_screen,
                                         create_folder)
 from presentation.menu import StoreMenu
@@ -25,7 +25,7 @@ def load_csv_data_in_database():
     loaded_csv = read_from_csv(CSV_FILE_IMPORT)
     csv_data = clean_csv_data(loaded_csv)
     dbhandle.connect()
-    write_rows_to_db(csv_data)
+    write_csv_to_db(csv_data)
     dbhandle.close()
 
 
