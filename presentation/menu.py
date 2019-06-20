@@ -1,5 +1,4 @@
 from pyfiglet import Figlet
-from utilities.helper_functions import clear_screen
 import colorama
 from colorama import Fore
 from collections import OrderedDict
