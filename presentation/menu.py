@@ -8,8 +8,7 @@ class StoreMenu:
 
     colorama.init()
 
-    @classmethod
-    def _print_header(cls, header: str) -> None:
+    def _print_header(self, header: str) -> None:
         """Print the header of the menu
 
         Parameters
@@ -26,8 +25,7 @@ class StoreMenu:
         print(text.renderText(header))
         print(f"{'~' * 96:96}")
 
-    @classmethod
-    def _show_menu_options(cls, options: OrderedDict) -> None:
+    def _show_menu_options(self, options: OrderedDict) -> None:
         """Receive the menu options as an orderedDict and print these out
 
         Parameters
@@ -45,10 +43,19 @@ class StoreMenu:
                   end="\n")
         print()
 
-    @classmethod
-    def _process_menu_selection(cls):
-        pass
+    def _process_menu_selection(self, options: OrderedDict) -> str:
+        try:
+            menu_entry = input("Enter your selection >>>  ")
+        except KeyboardInterrupt:
+            return f"{Fore.RED}The entry is not known. " \
+                f"Please try again{Fore.RESET}"
+        if menu_entry not in options.keys():
+            return f"{Fore.RED}The entry is not known. " \
+                f"Please try again{Fore.RESET}"
+        else:
+            return menu_entry
 
-    @classmethod
-    def menu(cls):
-        pass
+    def menu(self, options: OrderedDict, header: str) -> str:
+        self._print_header(header)
+        self._show_menu_options(options)
+        return self._process_menu_selection(options)

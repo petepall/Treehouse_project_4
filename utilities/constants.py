@@ -8,8 +8,8 @@ CSV_FILE_IMPORT = f"{Path().absolute()}\\import_data\\inventory.csv"
 CSV_FOLDER_EXPORT = f"{Path().absolute()}\\archive\\"
 CSV_FILE_EXPORT = "backup.csv"
 MENU = OrderedDict([
-    ('a', 'add_entry'),
-    ('v', 'view_entries'),
-    ('b', 'backup data'),
+    ('a', 'Add product'),
+    ('v', 'View selected product'),
+    ('b', 'Export data in csv format'),
     ('q', 'QUIT the App')
 ])

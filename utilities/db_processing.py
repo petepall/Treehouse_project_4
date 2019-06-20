@@ -1,6 +1,34 @@
-from peewee import IntegrityError
+from peewee import IntegrityError, InternalError
 
 from models.product import Product
+from utilities.csv_processing import clean_csv_data, read_from_csv
+
+
+def create_database() -> None:
+    """Create the database
+    """
+    try:
+        Product.create_table(safe=True)
+    except InternalError as err:
+        print(str(err))
+
+
+def load_csv_data_in_database(csvfile: str) -> None:
+    """Load the data from the CSV file into the database
+    
+    Parameters
+    ----------
+    csvfile : str
+        CSV file path and filename
+    
+    Returns
+    -------
+    None
+        
+    """
+    loaded_csv = read_from_csv(csvfile)
+    csv_data = clean_csv_data(loaded_csv)
+    write_csv_to_db(csv_data)
 
 
 def write_csv_to_db(csv_data) -> None:
