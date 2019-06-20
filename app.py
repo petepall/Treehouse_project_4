@@ -40,5 +40,6 @@ if __name__ == "__main__":
         load_csv_data_in_database()
     else:
         print(f"The {CSV_FILE_IMPORT} does not exist")
+        input("Press the 'ENTER' key to continue")
 
     clear_screen()
