@@ -43,10 +43,15 @@ def add_product_to_db(product: dict) -> None:
 
 
 def view_product():
-    # TODO: complete the view_product function
+    # TODO: build out the view_product method
     pass
 
 
 def backup_data():
-    # TODO: complete the backup_data function
+    # TODO: build out the backup_data method
+    pass
+
+
+def create_product():
+    # TODO: build out the create_product method
     pass
