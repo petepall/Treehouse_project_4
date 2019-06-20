@@ -4,11 +4,12 @@ from peewee import InternalError
 
 from models.base_model import dbhandle
 from models.product import Product
-from utilities.constants import CSV_FILE_IMPORT, DB_FILE, DB_FOLDER
+from utilities.constants import CSV_FILE_IMPORT, DB_FILE, DB_FOLDER, MENU
 from utilities.csv_processing import clean_csv_data, read_from_csv
 from utilities.db_processing import write_rows_to_db
 from utilities.helper_functions import (check_folder_exists, clear_screen,
                                         create_folder)
+from presentation.menu import StoreMenu
 
 
 def create_database():
@@ -42,4 +43,7 @@ if __name__ == "__main__":
         print(f"The {CSV_FILE_IMPORT} does not exist")
         input("Press the 'ENTER' key to continue")
 
+    # TODO: clean-up the following test code
     clear_screen()
+    StoreMenu._header()
+    StoreMenu._menu_options(MENU)
