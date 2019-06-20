@@ -37,6 +37,7 @@ if __name__ == "__main__":
             sys.exit(1)
         elif selection.lower() == 'a':
             create_product()
+            wait_for_enter("\nYour entry is saved")
         elif selection.lower() == 'v':
             product_id = product_search_input()
             view_product(product_id)

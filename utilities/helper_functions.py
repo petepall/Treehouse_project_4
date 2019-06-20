@@ -26,7 +26,7 @@ def convert_to_cents(price: str) -> int:
     int
         Price converted to cents
     """
-    return int(price.replace('$', '').replace('.', ''))
+    return int(price.replace('$', '').replace('.', '').replace(',', ''))
 
 
 def string_to_date(given_date: str) -> date:
