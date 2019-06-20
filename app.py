@@ -13,12 +13,13 @@ from utilities.helper_functions import (check_folder_exists, clear_screen,
                                         wait_for_enter)
 
 if __name__ == "__main__":
-    dbhandle.connect()
     if not os.path.isfile(DB_FOLDER + DB_FILE):
         if check_folder_exists(DB_FOLDER):
+            dbhandle.connect()
             create_database()
         else:
             create_folder(DB_FOLDER)
+            dbhandle.connect()
             create_database()
 
     if os.path.isfile(CSV_FILE_IMPORT):
@@ -43,7 +44,7 @@ if __name__ == "__main__":
             view_product(product_id)
             wait_for_enter()
         elif selection.lower() == 'b':
-            if not check_folder_exists:
+            if not check_folder_exists(CSV_FOLDER_EXPORT + CSV_FILE_EXPORT):
                 create_folder(CSV_FOLDER_EXPORT)
             wait_for_enter(backup_data(CSV_FOLDER_EXPORT + CSV_FILE_EXPORT))
         else:
