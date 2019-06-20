@@ -84,7 +84,6 @@ def create_folder(location: str):
     location : str
         folder location and name
     """
-    print(location)
     try:
         os.mkdir(location)
     except FileExistsError:
