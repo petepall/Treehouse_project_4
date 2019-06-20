@@ -12,7 +12,9 @@ from utilities.helper_functions import (check_folder_exists, clear_screen,
 from presentation.menu import StoreMenu
 
 
-def create_database():
+def create_database() -> None:
+    """Create the database
+    """
     try:
         dbhandle.connect()
         Product.create_table(safe=True)
@@ -21,7 +23,14 @@ def create_database():
         print(str(err))
 
 
-def load_csv_data_in_database():
+def load_csv_data_in_database() -> None:
+    """Load the data from the CSV file into the database
+
+    Returns
+    -------
+    None
+
+    """
     loaded_csv = read_from_csv(CSV_FILE_IMPORT)
     csv_data = clean_csv_data(loaded_csv)
     dbhandle.connect()
