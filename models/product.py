@@ -4,6 +4,13 @@ from datetime import date
 
 
 class Product(BaseModel):
+    """Class representing a product
+
+    Parameters
+    ----------
+    BaseModel : Model
+        Base model handling the connection
+    """
     product_id = AutoField()  # automatically is a primary key
     product_name = CharField(max_length=255, unique=True)
     product_quantity = IntegerField(default=0, null=False)
