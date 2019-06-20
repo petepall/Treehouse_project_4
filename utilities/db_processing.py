@@ -74,6 +74,18 @@ def add_product_to_db(product: dict) -> None:
 
 
 def view_product(product_id: str) -> None:
+    """View a product based on a given product ID
+
+    Parameters
+    ----------
+    product_id : str
+        Product ID provided by the user
+
+    Returns
+    -------
+    None
+
+    """
     query = Product.select().where(Product.product_id == product_id)
     if len(query):
         print_product_sheet(query)
@@ -100,7 +112,8 @@ def backup_data(csv_file: str) -> str:
 
 
 def create_product():
-
+    """Add a new prodcut to the database and show it to the user.
+    """
     new_product = enter_product_data()
     add_product_to_db(new_product)
     query = Product.select().where(Product.product_name ==

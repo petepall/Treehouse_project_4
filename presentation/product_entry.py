@@ -22,7 +22,7 @@ def enter_product_data() -> dict:
             except ValueError:
                 wait_for_enter("\nPlease enter a numeric value")
                 continue
-            
+
             try:
                 quantity = int(input("Product quantity >>>  "))
             except ValueError:
