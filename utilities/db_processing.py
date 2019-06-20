@@ -1,7 +1,9 @@
 from peewee import IntegrityError, InternalError
 
 from models.product import Product
-from utilities.csv_processing import clean_csv_data, read_from_csv
+from utilities.csv_processing import (clean_csv_data, read_from_csv,
+                                      write_to_csv)
+from presentation.product_view import print_product_sheet, unknown_product_id
 
 
 def create_database() -> None:
@@ -70,14 +72,30 @@ def add_product_to_db(product: dict) -> None:
             result.save()
 
 
-def view_product():
-    # TODO: build out the view_product method
-    pass
+def view_product(product_id: str) -> None:
+    query = Product.select().where(Product.product_id == product_id)
+    if len(query):
+        print_product_sheet(query)
+    else:
+        unknown_product_id(product_id)
 
 
-def backup_data():
-    # TODO: build out the backup_data method
-    pass
+def backup_data(csv_file: str) -> str:
+    """Read the data from the database and backup to CSV file
+
+    Parameters
+    ----------
+    csv_file : str
+        filename and path for the backup
+
+    Returns
+    -------
+    str
+        backup completion message
+    """
+    query = Product.select()
+    write_to_csv(csv_file, query)
+    return "Data backup completed."
 
 
 def create_product():

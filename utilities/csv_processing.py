@@ -69,11 +69,11 @@ def write_to_csv(filename: str, products: dict) -> None:
         csv_writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
         csv_writer.writeheader()
         for product in products:
-            price = f"${product['product_price'] / 100}"
-            date_string = date_to_string(product['date_updated'])
+            price = f"${product.product_price / 100}"
+            date_string = date_to_string(product.date_updated)
             csv_writer.writerow({
-                'product_name': product['product_name'],
-                'product_quantity': product['product_quantity'],
+                'product_name': product.product_name,
+                'product_quantity': product.product_quantity,
                 'product_price': price,
                 'date_updated': date_string
             })

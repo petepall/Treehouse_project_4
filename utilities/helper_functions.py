@@ -1,5 +1,6 @@
 import os
 from datetime import date, datetime
+from presentation.menu import StoreMenu
 
 
 def clear_screen() -> None:
@@ -107,3 +108,40 @@ def check_folder_exists(location: str) -> bool:
         return True
     else:
         return False
+
+
+def wait_for_enter(field_data=""):
+    """Wait for the user entry to continue
+
+    Parameters
+    ----------
+    field_data : str, optional
+        Data to show in the message, by default ""
+    """
+    try:
+        input(f"{field_data}\n"
+              f"Press the 'ENTER' key to continue")
+    except KeyboardInterrupt:
+        pass
+
+
+def product_search_input() -> str:
+    """handle the user input for search on product ID
+
+    Returns
+    -------
+    str
+        entered product ID
+    """
+    while True:
+        clear_screen()
+        StoreMenu.print_header("Product sheet")
+        try:
+            product_id = input("Enter the product ID to display >>>  ")
+            if product_id.isnumeric():
+                return product_id
+            else:
+                wait_for_enter("You must enter a number")
+                continue
+        except KeyboardInterrupt:
+            wait_for_enter("Exit via CTRL-C not possible")

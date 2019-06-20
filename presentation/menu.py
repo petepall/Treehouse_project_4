@@ -8,7 +8,8 @@ class StoreMenu:
 
     colorama.init()
 
-    def _print_header(self, header: str) -> None:
+    @classmethod
+    def print_header(cls, header: str) -> None:
         """Print the header of the menu
 
         Parameters
@@ -56,6 +57,6 @@ class StoreMenu:
             return menu_entry
 
     def menu(self, options: OrderedDict, header: str) -> str:
-        self._print_header(header)
+        self.print_header(header)
         self._show_menu_options(options)
         return self._process_menu_selection(options)
