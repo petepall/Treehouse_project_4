@@ -1,7 +1,7 @@
 from pyfiglet import Figlet
 from utilities.helper_functions import clear_screen
 import colorama
-from colorama import Fore, Back, Style
+from colorama import Fore
 from collections import OrderedDict
 
 
@@ -11,7 +11,6 @@ class StoreMenu:
 
     @classmethod
     def _header(cls) -> None:
-        clear_screen()
         text = Figlet(font='speed', width=100)
         print(text.renderText("Store Inventory"))
         print(f"{'~' * 96:96}")
@@ -22,3 +21,12 @@ class StoreMenu:
             print(f"   {Fore.YELLOW}{key}){Fore.RESET} {value.strip():90}",
                   end="\n")
         print()
+
+    @classmethod
+    def _process_menu_input(cls):
+        pass
+
+    @classmethod
+    def menu(cls):
+        pass
+              
