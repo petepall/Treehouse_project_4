@@ -29,7 +29,7 @@ def load_csv_data_in_database():
 
 
 if __name__ == "__main__":
-    if not os.path.isfile((DB_FOLDER + DB_FILE)):
+    if not os.path.isfile(DB_FOLDER + DB_FILE):
         if check_folder_exists(DB_FOLDER):
             create_database()
         else:
