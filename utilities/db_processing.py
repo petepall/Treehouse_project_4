@@ -66,7 +66,7 @@ def add_product_to_db(product: dict) -> None:
                        date_updated=product['date_updated']).execute()
     except IntegrityError:
         result = Product.get(product_name=product['product_name'])
-        if product['date_updated'] > result.date_updated:
+        if product['date_updated'] >= result.date_updated:
             result.product_quantity = product['product_quantity']
             result.product_price = product['product_price']
             result.date_updated = product['date_updated']
