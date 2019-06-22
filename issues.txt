@@ -20,6 +20,8 @@ I have now included colorama in the requirements.txt file.
     - Path issues - The application was made on a windows PC, and I did not account for cross platform compatibility.
     Issue is now fixed and the path should be created also on none windows environments, I can't test this as I don't have a Mac or Linux box.
 
+    Researched on Stack overflow and used the Patch().resolved() method to get the path working. I could not check if this definately works on a Linux or Mac machine.
+
 
 *******************************
 Add existing data to database
@@ -77,5 +79,7 @@ This isn't working for me either, could also have to do with the paths.
 Comments:
     - path issues - The application was made on a windows PC, and I did not account for cross platform compatibility.
     Issue is now fixed and the path should be created also on none windows environments, I can't test this as I don't have a Mac or Linux box.
+
+    Researched on Stack overflow and used the Patch().resolved() method to get the path working. I could not check if this definately works on a Linux or Mac machine,
 
 *******************************

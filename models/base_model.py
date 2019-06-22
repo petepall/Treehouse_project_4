@@ -2,7 +2,7 @@ from peewee import Model, SqliteDatabase
 from pathlib import Path
 
 
-dbhandle = SqliteDatabase(Path.cwd().absolute() / 'db/inventory.db')
+dbhandle = SqliteDatabase(Path('db/inventory.db').resolve()) 
 
 
 class BaseModel(Model):
