@@ -1,0 +1,69 @@
+Elements that Need Work
+CSV to Database
+One or more of the items below were not cleaned or inserted as the proper type.
+
+product_quantity must be an Integer.
+product_price must be an Integer.
+date_updated must be a Date object.
+Reviewer Comments:
+It pains me to do this because you did a lot of other great things in this project, but the path didn't work on my computer, so no data was loaded. I'm guessing because you're on windows?
+
+Look into using os.paths to make sure that its portable between OSes.
+
+Also - make sure to double check your requirements! I couldn't start the app initially because you didn't include colorama in your requirements file.
+
+-------------------------------
+Comments: 
+    - Colorama - On my windows system, I did not have to install colorama, it was present when I created the .venv out of the box running python 3.7.2
+I have now included colorama in the requirements.txt file.
+
+    - Path issues - The application was made on a windows PC, and I did not account for cross platform compatibility.
+    Issue is now fixed and the path should be created also on none windows environments, I can't test this as I don't have a Mac or Linux box.
+
+
+*******************************
+Add existing data to database
+The data from the inventory.csv file did not add all products and/or added products with incorrect values.
+
+product_quantity as an Integer
+product_price as an Integer
+date_updated as a date
+Reviewer Comments:
+Only giving you a needs work because you didn't get an exceeds here. At least, on my computer it wasn't overwriting.
+
+-------------------------------
+Comments:
+    - Overwriting - 
+
+*******************************
+
+Menu option: a
+Entering a at the menu prompt did not perform one or more of the correct actions:
+
+input the Product Name
+input the Product Quantity
+input the Product Price
+successfully save to the database
+Reviewer Comments:
+This is the same as before, an existing product isn't getting updated for me.
+
+-------------------------------
+Comments:
+    - Overwriting an existing product - 
+
+*******************************
+
+Menu option: b
+Entering b at the menu prompt did not perform one or more of the correct actions:
+
+A CSV file named backup.csv was generated and stored in the project folder.
+The CSV contents were not correct.
+Reviewer Comments:
+This isn't working for me either, could also have to do with the paths.
+
+-------------------------------
+Comments:
+    - path issues - The application was made on a windows PC, and I did not account for cross platform compatibility.
+    Issue is now fixed and the path should be created also on none windows environments, I can't test this as I don't have a Mac or Linux box.
+
+*******************************
