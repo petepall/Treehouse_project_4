@@ -40,6 +40,7 @@ def clean_csv_data(product_data: dict) -> dict:
         cleaned and converted product data
     """
     for row in product_data:
+        row['product_name'] = row['product_name'].strip()
         row['product_quantity'] = int(row['product_quantity'])
         row['product_price'] = convert_to_cents(row['product_price'])
         row['date_updated'] = string_to_date(row['date_updated'])

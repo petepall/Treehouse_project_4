@@ -33,7 +33,19 @@ Only giving you a needs work because you didn't get an exceeds here. At least, o
 
 -------------------------------
 Comments:
-    - Overwriting - 
+    - Overwriting - On my system, it is overwritting the data when I import from the CSV if the date if higher than the date of the record in the database.
+    In the standard import file, there is for example twice Juice - V8 Spash mentioned. One with price $1.25 and date 1/10/2018 and one with price $1.15 with date 1/13/2018.
+    After the database is created and the import has ran, the record in the table is the one with date 1/13/2018. I also appended a new record in the CSV file and this was also correctly imported
+    into the table.
+
+    According the requirements document it states:
+        "When entering this product into the database, if a duplicate product name is found, 
+        the app will check to see which product entry was most recently updated and only save that data."
+
+    I'm based on this checking if the date on the new record is higher than the date of the record in the DB.
+    If this is the case I'm overwritting the data. If the date is equal or older than the date in the DB, I skip the record.
+
+    I have updated this logic so that the record will be updated if the date of the new record is newer or equal to the existing record.
 
 *******************************
 
@@ -49,7 +61,7 @@ This is the same as before, an existing product isn't getting updated for me.
 
 -------------------------------
 Comments:
-    - Overwriting an existing product - 
+    - Overwriting an existing product - see comments above.
 
 *******************************
 

@@ -46,6 +46,7 @@ if __name__ == "__main__":
         elif selection.lower() == 'b':
             if not check_folder_exists(CSV_FOLDER_EXPORT + CSV_FILE_EXPORT):
                 create_folder(CSV_FOLDER_EXPORT)
+            print(CSV_FOLDER_EXPORT + CSV_FILE_EXPORT)
             wait_for_enter(backup_data(CSV_FOLDER_EXPORT + CSV_FILE_EXPORT))
         else:
             wait_for_enter(selection)
