@@ -1,6 +1,8 @@
-from peewee import AutoField, CharField, DateField, IntegerField
-from models.base_model import BaseModel
 from datetime import date
+
+from peewee import AutoField, CharField, DateField, IntegerField
+
+from models.base_model import BaseModel
 
 
 class Product(BaseModel):

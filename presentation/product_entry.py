@@ -1,7 +1,5 @@
 from datetime import date
 
-from colorama import Fore
-
 from presentation.menu import StoreMenu
 from utilities.helper_functions import (clear_screen, convert_to_cents,
                                         wait_for_enter)
