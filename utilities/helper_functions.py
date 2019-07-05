@@ -10,7 +10,7 @@ def clear_screen() -> None:
     -------
     None
     """
-    os.system('cls' if os.name == 'nt' else 'clear')
+    os.system("cls" if os.name == "nt" else "clear")
 
 
 def convert_to_cents(price: str) -> int:
@@ -26,7 +26,7 @@ def convert_to_cents(price: str) -> int:
     int
         Price converted to cents
     """
-    price = price.replace('$', '').replace(',', '.')
+    price = price.replace("$", "").replace(",", ".")
     converted_price: float = float(price) * 100
     return int(converted_price)
 
@@ -44,7 +44,7 @@ def string_to_date(given_date: str) -> date:
     date
         Date in datetime,date format
     """
-    return datetime.strptime(given_date, '%m/%d/%Y').date()
+    return datetime.strptime(given_date, "%m/%d/%Y").date()
 
 
 def date_to_string(date_to_convert: date) -> str:
@@ -60,7 +60,7 @@ def date_to_string(date_to_convert: date) -> str:
     str
         date in formated string format
     """
-    return date.strftime(date_to_convert, '%m/%d/%Y')
+    return date.strftime(date_to_convert, "%m/%d/%Y")
 
 
 def to_currency(cents: int) -> str:
@@ -121,8 +121,7 @@ def wait_for_enter(field_data=""):
         Data to show in the message, by default ""
     """
     try:
-        input(f"{field_data}\n"
-              f"Press the 'ENTER' key to continue")
+        input(f"{field_data}\n" f"Press the 'ENTER' key to continue")
     except KeyboardInterrupt:
         pass
 

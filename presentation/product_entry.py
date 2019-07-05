@@ -1,8 +1,11 @@
 from datetime import date
 
 from presentation.menu import StoreMenu
-from utilities.helper_functions import (clear_screen, convert_to_cents,
-                                        wait_for_enter)
+from utilities.helper_functions import (
+    clear_screen,
+    convert_to_cents,
+    wait_for_enter,
+)
 
 
 def enter_product_data() -> dict:
@@ -16,7 +19,8 @@ def enter_product_data() -> dict:
 
             try:
                 price = convert_to_cents(
-                    input("Product price in USD (0.00) >>>  "))
+                    input("Product price in USD (0.00) >>>  ")
+                )
             except ValueError:
                 wait_for_enter("\nPlease enter a numeric value")
                 continue
@@ -31,9 +35,9 @@ def enter_product_data() -> dict:
             continue
         break
 
-    product['product_name'] = name
-    product['product_price'] = price
-    product['product_quantity'] = quantity
-    product['date_updated'] = date.today()
+    product["product_name"] = name
+    product["product_price"] = price
+    product["product_quantity"] = quantity
+    product["date_updated"] = date.today()
 
     return product

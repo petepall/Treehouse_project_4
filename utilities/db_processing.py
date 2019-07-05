@@ -3,8 +3,11 @@ from peewee import IntegrityError, InternalError
 from models.product import Product
 from presentation.product_entry import enter_product_data
 from presentation.product_view import print_product_sheet, unknown_product_id
-from utilities.csv_processing import (clean_csv_data, read_from_csv,
-                                      write_to_csv)
+from utilities.csv_processing import (
+    clean_csv_data,
+    read_from_csv,
+    write_to_csv,
+)
 
 
 def create_database() -> None:
@@ -60,16 +63,18 @@ def add_product_to_db(product: dict) -> None:
     None
     """
     try:
-        Product.insert(product_name=product['product_name'],
-                       product_price=product['product_price'],
-                       product_quantity=product['product_quantity'],
-                       date_updated=product['date_updated']).execute()
+        Product.insert(
+            product_name=product["product_name"],
+            product_price=product["product_price"],
+            product_quantity=product["product_quantity"],
+            date_updated=product["date_updated"],
+        ).execute()
     except IntegrityError:
-        result = Product.get(product_name=product['product_name'])
-        if product['date_updated'] >= result.date_updated:
-            result.product_quantity = product['product_quantity']
-            result.product_price = product['product_price']
-            result.date_updated = product['date_updated']
+        result = Product.get(product_name=product["product_name"])
+        if product["date_updated"] >= result.date_updated:
+            result.product_quantity = product["product_quantity"]
+            result.product_price = product["product_price"]
+            result.date_updated = product["date_updated"]
             result.save()
 
 
@@ -116,6 +121,7 @@ def create_product():
     """
     new_product = enter_product_data()
     add_product_to_db(new_product)
-    query = Product.select().where(Product.product_name ==
-                                   new_product['product_name'])
+    query = Product.select().where(
+        Product.product_name == new_product["product_name"]
+    )
     print_product_sheet(query)

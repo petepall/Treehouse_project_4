@@ -13,6 +13,7 @@ class Product(BaseModel):
     BaseModel : Model
         Base model handling the connection
     """
+
     product_id = AutoField()  # automatically is a primary key
     product_name = CharField(max_length=255, unique=True)
     product_quantity = IntegerField(default=0, null=False)
@@ -21,4 +22,4 @@ class Product(BaseModel):
 
     class Meta:
         db_table = "products"
-        order_by = ('date_updated',)
+        order_by = ("date_updated",)

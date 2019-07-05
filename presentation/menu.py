@@ -22,7 +22,7 @@ class StoreMenu:
         None
 
         """
-        text = Figlet(font='speed', width=100)
+        text = Figlet(font="speed", width=100)
         print(text.renderText(header))
         print(f"{'~' * 96:96}")
 
@@ -40,19 +40,25 @@ class StoreMenu:
 
         """
         for key, value in options.items():
-            print(f"   {Fore.YELLOW}{key}){Fore.RESET} {value.strip():90}",
-                  end="\n")
+            print(
+                f"   {Fore.YELLOW}{key}){Fore.RESET} {value.strip():90}",
+                end="\n",
+            )
         print()
 
     def _process_menu_selection(self, options: OrderedDict) -> str:
         try:
             menu_entry = input("Enter your selection >>>  ")
         except KeyboardInterrupt:
-            return f"{Fore.RED}The entry is not known. " \
+            return (
+                f"{Fore.RED}The entry is not known. "
                 f"Please try again{Fore.RESET}"
+            )
         if menu_entry not in options.keys():
-            return f"{Fore.RED}The entry is not known. " \
+            return (
+                f"{Fore.RED}The entry is not known. "
                 f"Please try again{Fore.RESET}"
+            )
         else:
             return menu_entry
 

@@ -5,10 +5,10 @@ verify_ssl = true
 
 [dev-packages]
 flake8 = "*"
-autopep8 = "*"
 mypy = "*"
 pytest = "*"
 coverage = "*"
+black = "*"
 
 [packages]
 peewee = "==3.9.4"
