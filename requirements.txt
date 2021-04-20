@@ -1,4 +1,4 @@
--i https://pypi.org/simple
+-i https://pypi.org/simple/
 colorama==0.4.1
 peewee==3.9.4
 pyfiglet==0.8.post1
